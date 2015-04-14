@@ -14,6 +14,12 @@ public class TodoItem {
         this.priority = priority;
     }
 
+    public TodoItem(int id, String body, int priority) {
+        this.id = id;
+        this.body = body;
+        this.priority = priority;
+    }
+
     public int getId() {
         return id;
     }

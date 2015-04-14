@@ -20,8 +20,8 @@ public class EditItemActivity extends ActionBarActivity {
         setContentView(R.layout.activity_edit_item);
         etEditItem = (EditText) findViewById(R.id.et_editItem);
         Intent intent = getIntent();
-        String data = intent.getStringExtra(Contract.KEY_DATA);
-        mPosition = intent.getIntExtra(Contract.KEY_POSITION, 0);
+        String data = intent.getStringExtra(TodoListContract.KEY_DATA);
+        mPosition = intent.getIntExtra(TodoListContract.KEY_POSITION, 0);
         etEditItem.setText(data);
         etEditItem.setSelection(etEditItem.getText().length());
     }
@@ -29,8 +29,8 @@ public class EditItemActivity extends ActionBarActivity {
     public void btnSave(View view) {
         String editedData = etEditItem.getText().toString();
         Intent intent = new Intent();
-        intent.putExtra(Contract.KEY_EDITED_DATA, editedData);
-        intent.putExtra(Contract.KEY_POSITION, mPosition);
+        intent.putExtra(TodoListContract.KEY_EDITED_DATA, editedData);
+        intent.putExtra(TodoListContract.KEY_POSITION, mPosition);
 //        Log.d(LOG_TAG, editedData);
 //        Log.d(LOG_TAG, mPosition+"");
         setResult(RESULT_OK, intent);
